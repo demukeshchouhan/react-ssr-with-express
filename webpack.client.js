@@ -4,12 +4,11 @@ const merge = require("webpack-merge");
 const baseConfig = require("./baseConfig.js");
 
 const clientConfig = {
-  entry: "./src/client.js",
-  output: {
-    path: path.resolve(__dirname, "public"),
-    filename: "bundle.js",
-    publicPath: "/"
+  name: "client",
+  entry: {
+    client: ["@babel/polyfill", "./src/client.js"]
   },
+  target: "web",
 
   plugins: [
     new webpack.DefinePlugin({

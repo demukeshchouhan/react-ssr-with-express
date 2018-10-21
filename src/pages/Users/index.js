@@ -3,9 +3,9 @@ import { connect } from "react-redux";
 import { fetchUsers } from "../../actions";
 
 class Users extends Component {
-  //   componentWillMount = () => {
+  //   componentWillMount = async () => {
   //     console.log("server cwm");
-  //     this.props.fetchUsers();
+  //     await this.props.fetchUsers();
   //   };
 
   //   componentDidMount = () => {
@@ -37,8 +37,8 @@ class Users extends Component {
 // corrsponded component with html
 // @usecase: fetch API on server and create HTMl
 
-export const loadDataOnServer = store => {
-  return store.dispatch(fetchUsers());
+export const loadDataOnServer = ({ dispatch }) => {
+  return dispatch(fetchUsers());
 };
 
 const mapState = state => ({ ...state });
